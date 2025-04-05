@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Programa Trilhas</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #e2e8f0;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 0;
+    }
+
+    .login-header {
+      background-color: var(--primary);
+      color: white;
+      padding: 30px;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      text-align: center;
+    }
+
+    .login-header h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .login-header p {
+      opacity: 0.9;
+      font-size: 16px;
+    }
+
+    .login-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .login-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .login-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .login-actions .btn {
+      width: 100%;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .register-link a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+
+    .error-alert {
+      background-color: #fee2e2;
+      border: 1px solid #fecaca;
+      border-radius: var(--border-radius);
+      padding: 15px;
+      margin-bottom: 20px;
+      color: #ef4444;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-header">
+      <h1>Acesso ao Sistema</h1>
+      <p>Entre com suas credenciais para acessar o programa</p>
+    </div>
+
+    <div class="login-form">
+      <div class="error-alert" id="login-error">
+        Nome de usuário ou senha incorretos. Por favor, tente novamente.
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-usuario">ID do Usuário</label>
+          <input type="text" id="login-usuario" name="login-usuario" placeholder="Digite seu nome de usuário">
+          <div class="error-message" id="login-usuario-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" name="login-senha" placeholder="Digite sua senha">
+          <div class="error-message" id="login-senha-error"></div>
+        </div>
+
+        <div class="login-actions">
+          <button type="submit" class="btn btn-primary">Entrar</button>
+          <button type="button" class="btn btn-secondary" id="btn-limpar">Limpar</button>
+        </div>
+      </form>
+
+      <div class="register-link">
+        Ainda não tem uma conta? <a href="index.html">Cadastre-se aqui</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+
+</html>
